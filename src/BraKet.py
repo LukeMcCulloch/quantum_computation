@@ -38,6 +38,11 @@ def normalize(vector):
         return (1./mag)*vector
     
 def matrix_to_qubit_representaion(matrix, type_='C'):
+    """This default, 
+    (which seems to match with text book norms and mores), 
+    is conclusive proof that God is a C programmer, 
+    in so much that she is not a Fortran programmer ;)
+    """
     return np.asarray([matrix.flatten(type_)]).T
     
 
