@@ -8,14 +8,13 @@ Created on Sun Apr 14 15:30:03 2019
 
 import numpy as np
 
-#import qutip.qip.gates
 
 
 isa = isinstance
 Symbol = str          # A q Symbol is implemented as a Python str
 List   = list         # A q List is implemented as a Python list
 array = np.ndarray
-Number = (int, float) # A Scheme Number is implemented as a Python int or float
+Number = (int, float) # A Number is implemented as a Python int or float
 Matrix = (array)
 
 
@@ -120,23 +119,25 @@ class BraKet(object):
 
      
 class qubit_factory(object):
-    
+    """TBD
+    """
     def __init__(self):
         self.map = {'0' : BraKet([cb1,cb0]),
                     '1' : BraKet([cb0,cb1]) 
                     }
     
-    def __call__(alpha = 1., beta = 1., zero=1., one = 1.):
+    def __call__(self, alpha = 1., beta = 1., zero=1., one = 1.):
         
         return np.copy(self.map[key])
     
 class bloch_factory(object):
-    
+    """TBD
+    """
     def __init__(self):
         self.map = {'0' : BraKet([cb1,cb0]),
                     '1' : BraKet([cb0,cb1]) 
                     }
     
-    def __call__(alphs, theta, beta, phi):
+    def __call__(self, alphs, theta, beta, phi):
         return np.copy(self.map[key])
         

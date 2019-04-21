@@ -79,21 +79,9 @@ class Operator(BraKet):
 Matrix = (array, BraKet, Operator)
 
 def One(N=None, target=0):
-    """Quantum object representing the SNOT (Hadamard) gate.
+    """Quantum object representing the Identity gate.
 
-    Returns
-    -------
-    snot_gate : qobj
-        Quantum object representation of SNOT gate.
-
-    Examples
-    --------
-    >>> snot()
-    Quantum object: dims = [[2], [2]], \
-    shape = [2, 2], type = oper, isHerm = True
-    Qobj data =
-    [[ 0.70710678+0.j  0.70710678+0.j]
-     [ 0.70710678+0.j -0.70710678+0.j]]
+    
 
     """
     #if N is not None:
@@ -108,15 +96,15 @@ def H(N=None, target=0):
 
     Returns
     -------
-    snot_gate : qobj
+    H : Operator
         Quantum object representation of SNOT gate.
 
     Examples
     --------
-    >>> snot()
-    Quantum object: dims = [[2], [2]], \
+    >>> H()
+    Operator: dims = [[2], [2]], \
     shape = [2, 2], type = oper, isHerm = True
-    Qobj data =
+    Oerator array =
     [[ 0.70710678+0.j  0.70710678+0.j]
      [ 0.70710678+0.j -0.70710678+0.j]]
 
@@ -134,25 +122,9 @@ def cnot():
     return
 
 def X(N=None, target=0):
-    """Quantum object representing the SNOT (Hadamard) gate.
+    """Quantum object representing the Not gate.
 
-    Returns
-    -------
-    snot_gate : qobj
-        Quantum object representation of SNOT gate.
-
-    Examples
-    --------
-    >>> snot()
-    Quantum object: dims = [[2], [2]], \
-    shape = [2, 2], type = oper, isHerm = True
-    Qobj data =
-    [[ 0.70710678+0.j  0.70710678+0.j]
-     [ 0.70710678+0.j -0.70710678+0.j]]
 
     """
-    #if N is not None:
-    #    return gate_expand_1toN(snot(), N, target)
-    #else:
     return Operator([[cb0, cb1],
                      [cb1, cb0]])
