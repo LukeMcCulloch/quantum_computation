@@ -58,6 +58,8 @@ class Operator(BraKet):
             #print 'true, other is a matrix' 
             #if isa(X(),Gate.Operator)
             return Operator( np.dot(self.array,other.array) )
+        elif isa(other, Operator):
+            return Operator( np.dot(self.array,other.array) )
         else:
             #print 'false, other is a ',type(other) 
             return Operator( self.array * other )
@@ -137,3 +139,11 @@ def Y(N=None, target=0):
     """
     return Operator([[cb0, -cbi],
                      [cbi, cb0]])
+
+def Z(N=None, target=0):
+    """Quantum object representing the Pauli-Z gate.
+
+
+    """
+    return Operator([[cb1, cb0],
+                     [cb0, -cb1]])

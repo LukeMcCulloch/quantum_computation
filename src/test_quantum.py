@@ -172,3 +172,7 @@ if __name__ == """__main__""":
     print '|-> = '
     print H()*q1
     
+    print X()*X()
+    print Y()*Y()
+    print Z()*Z()
+    print X()*Y()*Z()*np.imag
