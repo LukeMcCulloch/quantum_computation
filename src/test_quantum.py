@@ -166,3 +166,9 @@ if __name__ == """__main__""":
     control = q2
     
     unittest.main()
+    
+    print '|-> = '
+    print H()*q0
+    print '|+> = '
+    print H()*q1
+    
