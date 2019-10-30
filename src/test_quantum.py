@@ -167,8 +167,8 @@ if __name__ == """__main__""":
     
     unittest.main()
     
-    print '|-> = '
-    print H()*q0
     print '|+> = '
+    print H()*q0
+    print '|-> = '
     print H()*q1
     
