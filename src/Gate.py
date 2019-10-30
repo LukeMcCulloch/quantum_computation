@@ -9,7 +9,7 @@ import numpy as np
 
 from BraKet import BraKet, normalize
 from utilities import isa, Symbol, List, array, Number, Matrix
-from complex_bit_def import cb0, cb1
+from complex_bit_def import cb0, cb1, cbi
 
 
 Matrix = (array, BraKet) # a q matrix is either an array, or a member of BraKet
@@ -123,8 +123,17 @@ def cnot():
 
 def X(N=None, target=0):
     """Quantum object representing the Not gate.
-
+    aka the Pauli-X gate
 
     """
     return Operator([[cb0, cb1],
                      [cb1, cb0]])
+
+
+def Y(N=None, target=0):
+    """Quantum object representing the Pauli-Y gate.
+
+
+    """
+    return Operator([[cb0, -cbi],
+                     [cbi, cb0]])
