@@ -14,7 +14,7 @@ from Gate import X,Y,Z
 from BraKet import BraKet, normalize, matrix_to_qubit_representaion
 
 from utilities import isa, Matrix
-from complex_bit_def import cb0, cb1
+from complex_bit_def import cb0, cb1, cbi
     
 class TestGates(unittest.TestCase):
 
@@ -176,4 +176,4 @@ if __name__ == """__main__""":
     print X()*X()
     print Y()*Y()
     print Z()*Z()
-    #print X()*Y()*Z()*np.imag
+    print cbi*X()*Y()*Z()
