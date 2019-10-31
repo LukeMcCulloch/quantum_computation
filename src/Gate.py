@@ -117,11 +117,14 @@ def H(N=None, target=0):
     return 1. / np.sqrt(2.0) * Operator([[cb1, cb1],
                                         [cb1, -cb1]])
     
-def cnot():
+def CNOT():
     """
+    In the computational basis
     """
-    print 'not implemented yet'
-    return
+    return Operator([[cb1, cb0, cb0, cb0],
+                     [cb0, cb1, cb0, cb0],
+                     [cb0, cb0, cb0, cb1],
+                     [cb0, cb0, cb1, cb0]])
 
 def X(N=None, target=0):
     """Quantum object representing the Not gate.
