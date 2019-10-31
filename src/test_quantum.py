@@ -172,6 +172,9 @@ if __name__ == """__main__""":
     print H()*q0
     print '|-> = '
     print H()*q1
+    h = H()
+    print h*q0
+    print h*q1 
     
     print X()*X()
     print Y()*Y()
