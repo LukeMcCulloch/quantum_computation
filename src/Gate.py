@@ -93,7 +93,8 @@ def One(N=None, target=0):
                      [cb0, cb1]])
     
     
-def H(N=None, target=0):
+#def H(N=None, target=0):
+class H(Operator):
     """Quantum object representing the SNOT (Hadamard) gate.
 
     Returns
@@ -111,11 +112,17 @@ def H(N=None, target=0):
      [ 0.70710678+0.j -0.70710678+0.j]]
 
     """
-    #if N is not None:
-    #    return gate_expand_1toN(snot(), N, target)
-    #else:
-    return 1. / np.sqrt(2.0) * Operator([[cb1, cb1],
-                                        [cb1, -cb1]])
+    def __init__(self):
+        self.rep = 'Op'
+        self.array = 1. / np.sqrt(2.0) * np.asarray([[cb1, cb1],
+                                                     [cb1, -cb1]])
+        return
+    def __call__():
+        #if N is not None:
+        #    return gate_expand_1toN(snot(), N, target)
+        #else:
+        return 1. / np.sqrt(2.0) * Operator([[cb1, cb1],
+                                            [cb1, -cb1]])
     
 def CNOT():
     """
