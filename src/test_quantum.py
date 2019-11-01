@@ -10,7 +10,7 @@ import numpy as np
 import unittest
 
 import Gate
-from Gate import X,Y,Z
+from Gate import X,Y,Z, Operator, CNOT
 from BraKet import BraKet, normalize, matrix_to_qubit_representaion
 
 from utilities import isa, Matrix
@@ -193,4 +193,17 @@ if __name__ == """__main__""":
     print ''
     print Z()*Z()
     print ''
+    print H()*H()
+    print ''
     print cbi*X()*Y()*Z()
+    
+    
+    alpha = 1.
+    beta  = 0.
+    s1 = alpha*H()*q0
+    s2 = beta*H()*q1
+    ans = H()*(s1+s2)
+    
+    #H2 = Operator(np.outer(h.array,h.array))
+    #cn = CNOT()
+    #print np.dot(H2.array,np.dot(cn.array,H2.array))

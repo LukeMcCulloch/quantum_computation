@@ -117,6 +117,7 @@ class H(Operator):
         self.array = 1. / np.sqrt(2.0) * np.asarray([[cb1, cb1],
                                                      [cb1, -cb1]])
         return
+    
     def __call__():
         #if N is not None:
         #    return gate_expand_1toN(snot(), N, target)
