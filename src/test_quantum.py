@@ -168,15 +168,29 @@ if __name__ == """__main__""":
     
     unittest.main()
     
-    print '|+> = '
+    print '|+>  '
     print H()*q0
-    print '|-> = '
+    print ''
+    print '|->  '
     print H()*q1
+    print ''
     h = H()
     print h*q0
     print h*q1 
     
+    print ''
+    print 'H|+> == q0 '
+    print q0,' =?=',H()*H()*q0, '\nyes, to floating point precision'
+    print ''
+    print 'H|-> == q1 '
+    print q1,' =?=',H()*H()*q1, '\nyes, to floating point precision'
+    
+    print ''
+    print 'identity relations'
     print X()*X()
+    print ''
     print Y()*Y()
+    print ''
     print Z()*Z()
+    print ''
     print cbi*X()*Y()*Z()
