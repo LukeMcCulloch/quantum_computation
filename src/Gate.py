@@ -6,6 +6,7 @@ Created on Mon Apr 15 19:12:30 2019
 @author: luke
 """
 import numpy as np
+import cmath
 
 from BraKet import BraKet, normalize
 from utilities import isa, Symbol, List, array, Number, Matrix
@@ -118,21 +119,44 @@ class H(Operator):
                                                      [cb1, -cb1]])
         return
     
-    def __call__():
+    def __str__(self):
+        return "H"
+    
+    def __call__(self):
         #if N is not None:
         #    return gate_expand_1toN(snot(), N, target)
         #else:
         return 1. / np.sqrt(2.0) * Operator([[cb1, cb1],
                                             [cb1, -cb1]])
+    @property
+    def matrix(self):
+        return 1. / cmath.sqrt(2.) * np.matrix([[1, 1], [1, -1]])
     
-def CNOT():
+class CNOT(Operator):
     """
     In the computational basis
     """
-    return Operator([[cb1, cb0, cb0, cb0],
-                     [cb0, cb1, cb0, cb0],
-                     [cb0, cb0, cb0, cb1],
-                     [cb0, cb0, cb1, cb0]])
+    def __init__(self):
+        self.rep = 'Op'
+        self._Rep = Operator([[cb1, cb0, cb0, cb0],
+                             [cb0, cb1, cb0, cb0],
+                             [cb0, cb0, cb0, cb1],
+                             [cb0, cb0, cb1, cb0]])
+        self.array = self._Rep.array
+    def __str__(self):
+        return "CNOT"
+    
+    def __call_(self, control=None, target=None):
+        #if control is None or target is None:
+        return Operator([[cb1, cb0, cb0, cb0],
+                         [cb0, cb1, cb0, cb0],
+                         [cb0, cb0, cb0, cb1],
+                         [cb0, cb0, cb1, cb0]])
+#        else:
+#            osize = np.size(other.array)
+#            aOp = np.array((osize[0],osize[1]),complex)
+#            if control.iszero:
+#                return np.asarray()
 
 def X(N=None, target=0):
     """Quantum object representing the Not gate.

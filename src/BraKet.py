@@ -38,13 +38,16 @@ def normalize(vector):
         return (1./mag)*vector
     
 def matrix_to_qubit_representaion(matrix, type_='C'):
-    """This default, 
-    (which seems to match with text book norms and mores), 
-    is conclusive proof that God is a C programmer, 
-    in so much that she is not a Fortran programmer ;)
+    """This seems to match with text book conventions
     """
     return np.asarray([matrix.flatten(type_)]).T
-    
+
+def qubits_to_vector_representation(qubits):
+    return
+
+def closeto(self,target,tol=1.e-6):
+    if abs(self-target)>tol:
+        return True
 
 class BraKet(object):
     
@@ -54,6 +57,13 @@ class BraKet(object):
         self.force_real_valued = force_real_valued
         self.array = array
         self.init_array(array)
+        self.iszero = False
+        self.isone = False
+        if closeto(self.array[0,0],1.) and closeto(self.array[1,0],0.):
+            self.iszero = True
+        elif closeto(self.array[1,0],1.) and closeto(self.array[1,0],0.):
+            self.isone = True
+            
         
 #        self.mag = normalize(
 #                matrix_to_qubit_representaion(
