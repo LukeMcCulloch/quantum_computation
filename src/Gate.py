@@ -122,7 +122,7 @@ class H(Operator):
         array = 1. / np.sqrt(2.0) * np.asarray([[cb1, cb1],
                                                      [cb1, -cb1]])
         
-        super(H, self).__init__(array)
+        super(H, self).__init__(array) #yeah, python 2.  TODO: update after wind turbine proj done at work!
         return
     
     def __str__(self):
