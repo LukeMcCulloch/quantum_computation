@@ -11,7 +11,7 @@ import unittest
 
 import Gate
 from Gate import X,Y,Z, Operator, CNOT
-from BraKet import BraKet, normalize, matrix_to_qubit_representaion
+from BraKet import BraKet, normalize, matrix_to_qubit_representaion, TensorProduct
 
 from utilities import isa, Matrix
 from complex_bit_def import cb0, cb1, cbi

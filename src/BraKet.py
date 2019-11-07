@@ -42,8 +42,8 @@ def matrix_to_qubit_representaion(matrix, type_='C'):
     """
     return np.asarray([matrix.flatten(type_)]).T
 
-def qubits_to_vector_representation(qubits):
-    return
+def TensorProduct(ket1,ket2):
+    return np.kron(ket1.array,ket2.array)
 
 def closeto(self,target,tol=1.e-6):
     if abs(self-target)>tol:
