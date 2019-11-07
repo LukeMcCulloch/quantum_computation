@@ -54,7 +54,7 @@ class Operator(BraKet):
         return self.array
     
     def __mul__(self,other):
-        """tensor (outer) product"""
+        """tensor (inner) product"""
         if isa(other, Matrix):
             #print 'true, other is a matrix' 
             #if isa(X(),Gate.Operator)

@@ -104,7 +104,7 @@ class BraKet(object):
     
     
     def __add__(self,other):
-        """tensor (outer) product"""
+        """elementwise addition"""
         if isa(other, BraKet):
             return BraKet( self.array + other.array)
         else:
@@ -118,9 +118,9 @@ class BraKet(object):
     def __mul__(self,other):
         """tensor (outer) product"""
         if isa(other, BraKet):
-            return BraKet( np.outer(self.array,other.array) )
+            return BraKet( TensorProduct(self,other) )
         else:
-            return BraKet( np.outer(self.array,other) )
+            return BraKet( np.kron(self.array,other) )
             
     
     def __rmul__(self, other):
@@ -128,7 +128,7 @@ class BraKet(object):
     
     
     def elementwise_mul(self,other):
-        """tensor (outer) product"""
+        """elementwise product"""
         return BraKet( np.multiply(self.array,other.array ) )
     
 
