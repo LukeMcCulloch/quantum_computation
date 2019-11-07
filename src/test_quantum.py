@@ -216,7 +216,7 @@ if __name__ == """__main__""":
     print 'behavior of CNOT in the Hadamard basis '
     print 'looks like a CNOT in the standard basis'
     print 'where the control is now the target bit, '
-    print 'and the original target bit now appears to be the control!'
+    print 'and the original target bit now appears to act as the control!'
     #np.set_printoptions(precision=3)
     np.set_printoptions(suppress=True)
     print ans
