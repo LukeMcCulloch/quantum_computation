@@ -197,6 +197,9 @@ if __name__ == """__main__""":
     print ''
     print cbi*X()*Y()*Z()
     
+    print 'tensor relations'
+    print TensorProduct(q0,q1)
+    print TensorProduct(H(),H())
     
     alpha = 1.
     beta  = 0.
@@ -204,6 +207,9 @@ if __name__ == """__main__""":
     s2 = beta*H()*q1
     ans = H()*(s1+s2)
     
-    #H2 = Operator(np.outer(h.array,h.array))
-    #cn = CNOT()
+    print 'CNOT, Hadamard basis magic'
+    H2 = Operator(TensorProduct(H(),H()))
+    cn = CNOT()
+    H2i = Operator(np.linalg.inv(H2.array))
+    ans = H2i*cn*H2
     #print np.dot(H2.array,np.dot(cn.array,H2.array))
