@@ -210,6 +210,14 @@ if __name__ == """__main__""":
     print 'CNOT, Hadamard basis magic'
     H2 = Operator(TensorProduct(H(),H()))
     cn = CNOT()
-    H2i = Operator(np.linalg.inv(H2.array))
+    H2i = Operator(np.linalg.inv(H2.array))#TODO: make the type behavior natrual
     ans = H2i*cn*H2
+    
+    print 'behavior of CNOT in the Hadamard basis '
+    print 'looks like a CNOT in the standard basis'
+    print 'where the control is now the target bit, '
+    print 'and the original target bit now appears to be the control!'
+    #np.set_printoptions(precision=3)
+    np.set_printoptions(suppress=True)
+    print ans
     #print np.dot(H2.array,np.dot(cn.array,H2.array))
