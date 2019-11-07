@@ -23,6 +23,10 @@ class Operator(BraKet):
         self.rep = rep
         self.array = array
         self.init_array(array)
+        #
+        self.data = array 
+        self.dims = np.shape(self.data)
+        self.shape = np.shape(self.data)
     
     def init_array(self, array):
         if type(array) is list:
@@ -115,8 +119,10 @@ class H(Operator):
     """
     def __init__(self):
         self.rep = 'Op'
-        self.array = 1. / np.sqrt(2.0) * np.asarray([[cb1, cb1],
+        array = 1. / np.sqrt(2.0) * np.asarray([[cb1, cb1],
                                                      [cb1, -cb1]])
+        
+        super(H, self).__init__(array)
         return
     
     def __str__(self):
